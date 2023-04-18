@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {FaBars, FaTimes} from 'react-icons/fa';
 
 const NavBar = () => {
 
+    const [nav, setNav] = useState(false);
     const navLinks = [
         {
             id: 1,
@@ -41,12 +42,28 @@ const NavBar = () => {
             ))}
         </ul>
 
-        <div className='cursor-pointer pr-4 z-10 text-gray-200'>
-            <FaBars size={40}/>
+        <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 z-10 text-gray-200'
+        >
+            {nav ? <FaBars size={40} /> : <FaBars size={30}/>}
         </div>
+        {/*onClick, change state*/}
+
+        {nav && (
+            <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-700">
+                {navLinks.map(({ id, link}) => (
+                <li
+                    key={link}
+                    className="px-4 cursor-pointer capitalize py-6 text-4xl"
+                >
+                    {link}
+                </li>
+                ))}
+            </ul>
+        )}
+        {/* If nav is false (at line.6) the full screen menu is not displayed unless state is changed to true via onClick*/}
 
     </div>
-  )
-}
+  );
+};
 
 export default NavBar
