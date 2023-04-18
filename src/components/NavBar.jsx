@@ -27,8 +27,8 @@ const NavBar = () => {
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
     {/*display-flex, justify-content space-between, align-items center, width 100%, white text black background, position fixed*/}
         <div>
-            <h1 className="text-4xl ml-2">LILY FOSTER-GRELLIS</h1>
-            {/*text is 36px, margin-left 8px*/}
+            <h1 className="text-2xl ml-2">LILY FOSTER-GRELLIS</h1>
+            {/*text is 24px, margin-left 8px*/}
         </div>
 
         <ul className="hidden md:flex">
