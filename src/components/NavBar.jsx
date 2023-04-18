@@ -42,7 +42,7 @@ const NavBar = () => {
             ))}
         </ul>
 
-        <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 z-10 text-gray-200'
+        <div onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 text-gray-200 md:hidden"
         >
             {nav ? <FaBars size={40} /> : <FaBars size={30}/>}
         </div>
